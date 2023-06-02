@@ -22,7 +22,7 @@ export class Customer {
 
         for(const [index, rental] of rentals) {
             let thisAmount = 0;
-            thisAmount += this.getTotalCost(rental);
+            thisAmount += this.getCost(rental);
 
             frequentRenterPoints++;
 
@@ -43,7 +43,7 @@ export class Customer {
     }
 
 
-    private getTotalCost(each: Rental) {
+    private getCost(each: Rental) {
         let total_cost = 0;
         // determines the amount for each line
         switch (each.getMovie().getPriceCode()) {
