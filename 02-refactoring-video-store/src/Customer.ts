@@ -37,12 +37,17 @@ export class Customer {
                     thisAmount += total_cost;
                     break;
                 case Movie.NEW_RELEASE:
-                    thisAmount += each.getDaysRented() * 3;
+                    total_cost = each.getDaysRented() * 3;
+                    thisAmount += total_cost;
                     break;
                 case Movie.CHILDRENS:
-                    thisAmount += 1.5;
-                    if (each.getDaysRented() > 3)
-                        thisAmount += (each.getDaysRented() - 3) * 1.5;
+                    //thisAmount += 1.5;
+                    total_cost = 1.5
+                    if (each.getDaysRented() > 3){
+                        //thisAmount += (each.getDaysRented() - 3) * 1.5;
+                        total_cost += (each.getDaysRented() - 3) * 1.5;
+                    }
+                    thisAmount += total_cost;
                     break;
             }
 
