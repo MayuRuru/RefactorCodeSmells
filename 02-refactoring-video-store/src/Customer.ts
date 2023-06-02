@@ -20,17 +20,17 @@ export class Customer {
         const rentals = this.rentals.entries();
         let result = "Rental Record for " + this.getName() + "\n";
 
-        for(const [index, each] of rentals) {
+        for(const [index, rental] of rentals) {
             let thisAmount = 0;
-            thisAmount += this.getTotalCost(each);
+            thisAmount += this.getTotalCost(rental);
 
             frequentRenterPoints++;
 
-            if (each.getMovie().getPriceCode() == Movie.NEW_RELEASE
-                && each.getDaysRented() > 1)
+            if (rental.getMovie().getPriceCode() == Movie.NEW_RELEASE
+                && rental.getDaysRented() > 1)
                 frequentRenterPoints++;
 
-            result += "\t" + each.getMovie().getTitle() + "\t"
+            result += "\t" + rental.getMovie().getTitle() + "\t"
                 + new String(thisAmount.toFixed(1)) + "\n";
             totalAmount += thisAmount;
 
