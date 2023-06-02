@@ -22,8 +22,7 @@ export class Customer {
 
         for(const [index, each] of rentals) {
             let thisAmount = 0;
-            let total_cost = this.getTotalCost(each);
-            thisAmount += total_cost;
+            thisAmount += this.getTotalCost(each);
 
             frequentRenterPoints++;
 
