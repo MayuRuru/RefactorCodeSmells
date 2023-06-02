@@ -23,12 +23,18 @@ export class Customer {
         for(const [index, each] of rentals) {
             let thisAmount = 0;
 
+            let total_cost = 0;
             // determines the amount for each line
             switch (each.getMovie().getPriceCode()) {
                 case Movie.REGULAR:
-                    thisAmount += 2;
-                    if (each.getDaysRented() > 2)
-                        thisAmount += (each.getDaysRented() - 2) * 1.5;
+                    //thisAmount += 2;
+                    total_cost = 2;
+                    if (each.getDaysRented() > 2){
+                        total_cost += (each.getDaysRented() - 2) * 1.5;
+                        //thisAmount += (each.getDaysRented() - 2) * 1.5;
+
+                    }
+                    thisAmount += total_cost;
                     break;
                 case Movie.NEW_RELEASE:
                     thisAmount += each.getDaysRented() * 3;
