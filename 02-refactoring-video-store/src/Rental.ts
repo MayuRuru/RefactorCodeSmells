@@ -19,20 +19,21 @@ export class Rental {
 
     getRentalCost() {
         let total_cost = 0;
+        const daysRented = this.getDaysRented();
         switch (this.movie.getPriceCode()) {
             case Movie.REGULAR:
                 total_cost = 2;
-                if (this.getDaysRented() > 2) {
-                    total_cost += (this.getDaysRented() - 2) * 1.5;
+                if (daysRented > 2) {
+                    total_cost += (daysRented - 2) * 1.5;
                 }
                 break;
             case Movie.NEW_RELEASE:
-                total_cost = this.getDaysRented() * 3;
+                total_cost = daysRented * 3;
                 break;
             case Movie.CHILDRENS:
                 total_cost = 1.5
-                if (this.getDaysRented() > 3) {
-                    total_cost += (this.getDaysRented() - 3) * 1.5;
+                if (daysRented > 3) {
+                    total_cost += (daysRented - 3) * 1.5;
                 }
                 break;
         }
