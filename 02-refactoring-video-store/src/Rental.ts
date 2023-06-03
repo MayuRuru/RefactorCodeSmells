@@ -19,7 +19,7 @@ export class Rental {
 
 
 
-    getRentalCost(rental: Rental) {
+    getRentalCost() {
         let total_cost = 0;
         switch (this.getMovie().getPriceCode()) {
             case Movie.REGULAR:

@@ -44,7 +44,7 @@ export class Customer {
 
 
     private getCost(rental: Rental) : number{
-        return rental.getRentalCost(rental)
+        return rental.getRentalCost()
     }
 
     private name: string;
