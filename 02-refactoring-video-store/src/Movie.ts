@@ -23,7 +23,7 @@ export class Movie {
         return this.title;
     }
 
-    private getMovieCost(daysRented: number) {
+    getMovieCost(daysRented: number) {
         let total_cost = 0;
         switch (this.getPriceCode()) {
             case Movie.REGULAR:
