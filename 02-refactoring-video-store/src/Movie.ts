@@ -23,4 +23,25 @@ export class Movie {
         return this.title;
     }
 
+    private getMovieCost(daysRented: number) {
+        let total_cost = 0;
+        switch (this.getPriceCode()) {
+            case Movie.REGULAR:
+                total_cost = 2;
+                if (daysRented > 2) {
+                    total_cost += (daysRented - 2) * 1.5;
+                }
+                break;
+            case Movie.NEW_RELEASE:
+                total_cost = daysRented * 3;
+                break;
+            case Movie.CHILDRENS:
+                total_cost = 1.5
+                if (daysRented > 3) {
+                    total_cost += (daysRented - 3) * 1.5;
+                }
+                break;
+        }
+        return total_cost;
+    }
 }
